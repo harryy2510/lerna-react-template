@@ -1,0 +1,12 @@
+.idea
+.vscode
+
+coverage
+node_modules
+lib
+
+.jest-*
+*.log*
+.DS_Store
+
+packages/**/CHANGELOG.md
