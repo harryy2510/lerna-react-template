@@ -7,13 +7,22 @@
         "build": "lerna exec --parallel -- NODE_ENV=production rollup -c rollup.config.js",
         "deploy-storybook": "storybook-to-ghpages",
         "build-storybook": "build-storybook",
-        "release": "lerna publish",
-        "commit": "commit"
+        "release": "lerna publish"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     },
     "husky": {
         "hooks": {
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
     },
     "browserslist": {
         "production": [
@@ -30,13 +39,15 @@
     "workspaces": [
         "packages/*"
     ],
+    "dependencies": {
+        "react": "^16.13.1"
+    },
     "devDependencies": {
         "@babel/core": "^7.10.5",
         "@babel/plugin-transform-runtime": "^7.10.5",
         "@babel/preset-env": "^7.10.4",
         "@commitlint/cli": "^9.1.1",
         "@commitlint/config-conventional": "^9.1.1",
-        "@commitlint/prompt-cli": "^9.1.1",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
         "@rollup/plugin-babel": "^5.1.0",
         "@rollup/plugin-commonjs": "^14.0.0",
@@ -54,6 +65,7 @@
         "babel-loader": "^8.1.0",
         "babel-plugin-import": "^1.13.0",
         "babel-preset-react-app": "^9.1.2",
+        "cz-conventional-changelog": "^3.2.0",
         "husky": "^4.2.5",
         "lerna": "^3.22.1",
         "node-sass": "^4.14.1",
