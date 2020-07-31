@@ -7,7 +7,6 @@ import url from '@rollup/plugin-url'
 import multiInput from 'rollup-plugin-multi-input'
 import tsc from 'rollup-plugin-typescript2'
 import { terser } from 'rollup-plugin-terser'
-const babelConfig = require('./babel.config')
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
@@ -25,7 +24,6 @@ export default {
         url(),
         tsc(),
         babel({
-            ...babelConfig,
             exclude: 'node_modules/**',
             babelHelpers: 'runtime',
             extensions

@@ -1,5 +1,5 @@
 {
-    "name": "@harryy/button",
+    "name": "@harryy/test-package",
     "version": "0.1.0",
     "main": "lib/index.js",
     "typings": "lib/index.d.ts",
@@ -13,7 +13,10 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {
+    "dependencies": {
         "react": "^16.13.1"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.43"
     }
 }

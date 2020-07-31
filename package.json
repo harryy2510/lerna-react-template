@@ -4,7 +4,11 @@
     "scripts": {
         "bootstrap": "lerna bootstrap --use-workspaces",
         "dev": "start-storybook -p 5555",
-        "build": "lerna exec --parallel -- NODE_ENV=production rollup -c ../../rollup.config.js"
+        "build": "lerna exec --parallel -- NODE_ENV=production rollup -c rollup.config.js",
+        "deploy-storybook": "storybook-to-ghpages",
+        "build-storybook": "build-storybook",
+        "release": "lerna publish",
+        "commit": "commit"
     },
     "husky": {
         "hooks": {
@@ -33,6 +37,7 @@
         "@commitlint/cli": "^9.1.1",
         "@commitlint/config-conventional": "^9.1.1",
         "@commitlint/prompt-cli": "^9.1.1",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
         "@rollup/plugin-babel": "^5.1.0",
         "@rollup/plugin-commonjs": "^14.0.0",
         "@rollup/plugin-node-resolve": "^8.4.0",
@@ -45,7 +50,6 @@
         "@types/jest": "^26.0.7",
         "@types/lodash-es": "^4.17.3",
         "@types/node": "^14.0.27",
-        "@types/react": "^16.9.43",
         "@types/react-dom": "^16.9.8",
         "babel-loader": "^8.1.0",
         "babel-plugin-import": "^1.13.0",
@@ -54,13 +58,14 @@
         "lerna": "^3.22.1",
         "node-sass": "^4.14.1",
         "prettier": "^2.0.5",
+        "react-refresh": "^0.8.3",
         "rollup": "^2.23.0",
         "rollup-plugin-multi-input": "^1.1.1",
         "rollup-plugin-peer-deps-external": "^2.2.3",
         "rollup-plugin-postcss": "^3.1.3",
         "rollup-plugin-terser": "^6.1.0",
         "rollup-plugin-typescript2": "^0.27.1",
-        "ts-loader": "^8.0.1",
+        "simple-progress-webpack-plugin": "^1.1.2",
         "typescript": "^3.9.7"
     }
 }
