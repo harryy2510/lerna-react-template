@@ -9,5 +9,4 @@ lib
 *.log*
 .DS_Store
 
-packages/**/CHANGELOG.md
 storybook-static
